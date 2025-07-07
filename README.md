@@ -2,10 +2,6 @@
 
 A modern, responsive React-based frontend for vendor point-of-sale (POS) and administrative management system. Built with Vite for optimal performance and developer experience.
 
-# VendorPal-FE
-
-A modern, responsive React-based frontend for vendor point-of-sale (POS) and administrative management system. Built with Vite for optimal performance and developer experience.
-
 ## Features
 
 ### Authentication System
