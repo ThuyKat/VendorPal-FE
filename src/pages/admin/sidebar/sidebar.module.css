@@ -1,0 +1,137 @@
+/* Main Sidebar Container */
+.sidebar {
+    background-color: #111827;
+    color: white;
+    height: 100vh;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-open {
+    width: 16rem; /* 256px */
+}
+
+.sidebar-closed {
+    width: 4.5rem; /* 64px */
+}
+
+/* Header Section */
+.sidebar-header {
+    padding: 1rem;
+    border-bottom: 1px solid #374151;
+}
+
+
+.sidebar-toggle {
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    min-height: 2rem;
+}
+
+.sidebar-toggle:hover {
+    background-color: #374151;
+}
+
+/* Navigation Section */
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-button {
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border: none;
+    text-align: left;
+    background: transparent;
+}
+.nav-open{
+    justify-content: flex-start;
+
+}
+.nav-closed{
+    justify-content: center;
+
+}
+.nav-active {
+    background-color: #2563eb;
+    color: white;
+
+}
+
+.nav-inactive {
+    color: #d1d5db;
+}
+
+.nav-inactive:hover {
+    background-color: #1f2937;
+    color: white;
+}
+
+.nav-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.nav-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+/* Footer Section */
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid #374151;
+}
+
+.pos-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-align: left;
+}
+
+.pos-button:hover {
+    background-color: #15803d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar-open {
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+  }
+  
+  .sidebar-closed {
+    width: 0;
+    overflow: hidden;
+  }
+}

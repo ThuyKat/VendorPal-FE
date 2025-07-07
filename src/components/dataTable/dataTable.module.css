@@ -1,0 +1,120 @@
+.tableContainer {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tableHeader {
+  text-align: left;
+  padding: 1rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.tableRow {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.2s ease;
+}
+
+.tableRow:hover {
+  background-color: #f9fafb;
+}
+
+.tableCell {
+  padding: 1rem;
+  vertical-align: top;
+  color: #374151;
+}
+/*??  */
+.tableCellBold {
+  padding: 1rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.textMuted {
+  color: #6b7280;
+}
+/* Actions */
+.actionsContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.actionButton {
+  padding: 0.25rem;
+  background: none;
+  border: none;
+  border-radius: 0.25rem;
+  color: #9ca3af;
+}
+
+.actionButton:hover {
+  background-color: #f3f4f6;
+}
+.view-button:hover {
+  color: #2563eb;
+}
+
+.edit-button:hover {
+  color: #059669;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tableCell,
+  .tableCellBold,
+  .tableHeader {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .actionsContainer {
+    gap: 0.25rem;
+  }
+  
+  .actionButton {
+    padding: 0.125rem;
+    justify-content: center;
+  }
+  
+  .icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+}
+
+/* Scrollbar Styling */
+.tableWrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tableWrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}

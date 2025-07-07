@@ -1,0 +1,118 @@
+
+.reportCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.reportCard:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.iconContainer {
+  padding: 0.75rem;
+  border-radius: 9999px;
+  width: fit-content;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Color Classes */
+.blue {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.green {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.purple {
+  background-color: #f3e8ff;
+  color: #9333ea;
+}
+
+.orange {
+  background-color: #fed7aa;
+  color: #ea580c;
+}
+
+.red {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.indigo {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+}
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #111827;
+  line-height: 1.4;
+}
+
+.description {
+  color: #4b5563;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Generate Button */
+.generateButton {
+  color: #2563eb;
+  font-weight: 500;
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0;
+}
+
+.generateButton:hover {
+  color: #1d4ed8;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .reportCard {
+    padding: 1.25rem;
+  }
+  
+  .title {
+    font-size: 1rem;
+  }
+  
+  .description {
+    font-size: 0.8125rem;
+  }
+  
+  .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .iconContainer {
+    padding: 0.625rem;
+  }
+}

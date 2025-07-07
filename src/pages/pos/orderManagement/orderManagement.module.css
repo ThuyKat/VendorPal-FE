@@ -1,0 +1,81 @@
+/* OrderManagement.module.css */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-left:1rem;
+}
+
+.filterContainer {
+  display: flex;
+  background-color: #f3f4f6;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  flex-wrap:wrap;
+  margin-right:1rem;
+}
+
+.filterButton {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color, background-color 0.15s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.activeFilter {
+  background-color: white;
+  color: #2563eb;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.inactiveFilter {
+  background-color: transparent;
+  color: #4b5563;
+}
+
+.inactiveFilter:hover {
+  color: #1f2937;
+}
+.ordersList {
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
+ 
+}
+
+.emptyState {
+  text-align: center;
+  padding: 2rem 0;
+  color: #6b7280;
+}
+
+
+@media (min-width: 485px) {
+  
+  .filterContainer{
+    flex-wrap: nowrap;
+  }
+}
+@media (min-width: 1024px) {
+  .ordersList {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .filterContainer{
+    margin:0 auto;
+  }
+}
+
+  

@@ -1,0 +1,88 @@
+/* Text Type */
+.textValue {
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.emptyValue {
+  color: #d1d5db;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+/* Status Type - Pill Shape */
+.statusPill {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.statusSuccess {
+  color: #16a34a;
+  background-color: #dcfce7;
+}
+
+.statusWarning {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.statusDanger {
+  color: #dc2626;
+  background-color: #fee2e2;
+}
+
+.statusInfo {
+  color: #2563eb;
+  background-color: #dbeafe;
+}
+.statusDeciding{
+  background-color: #fef3c7;
+  color: #92400e;
+}
+.statusDefault {
+  color: #6b7280;
+  background-color: #f3f4f6;
+}
+
+/* Tag Type - Square Shape */
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.tag {
+  padding: 0.25rem 0.5rem;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+  border: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .statusPill {
+    padding: 0.125rem 0.5rem;
+    font-size: 0.6875rem;
+  }
+  
+  .tag {
+    padding: 0.125rem 0.375rem;
+    font-size: 0.6875rem;
+  }
+  
+  .textValue,
+  .emptyValue {
+    font-size: 0.8125rem;
+  }
+}

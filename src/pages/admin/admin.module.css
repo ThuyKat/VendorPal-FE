@@ -1,0 +1,9 @@
+.admin-layout{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}

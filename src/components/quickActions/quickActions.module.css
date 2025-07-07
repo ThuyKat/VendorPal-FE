@@ -1,0 +1,51 @@
+/* Actions Grid */
+.actionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.actionButton {
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.actionButton:hover {
+  background-color: #f9fafb;
+}
+
+.actionIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 auto 0.5rem auto;
+}
+
+.actionButton:nth-child(1) .actionIcon {
+  color: #2563eb;
+}
+
+.actionButton:nth-child(2) .actionIcon {
+  color: #16a34a;
+}
+
+.actionButton:nth-child(3) .actionIcon {
+  color: #9333ea;
+}
+
+.actionButton:nth-child(4) .actionIcon {
+  color: #ea580c;
+}
+
+.actionLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827;
+}

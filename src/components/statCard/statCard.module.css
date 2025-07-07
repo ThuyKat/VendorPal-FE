@@ -1,0 +1,117 @@
+/* Stats Card */
+.statsCard {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.statsContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statsLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0 0 0.25rem 0;
+}
+
+.statsValue {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin: 0;
+}
+
+.statsIcon {
+  padding: 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-green {
+  background-color: #dcfce7;
+}
+
+.icon-blue {
+  background-color: #dbeafe;
+}
+
+.icon-purple {
+  background-color: #f3e8ff;
+}
+
+.icon-orange {
+  background-color: #fed7aa;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon-green .icon {
+  color: #16a34a;
+}
+
+.icon-blue .icon {
+  color: #2563eb;
+}
+
+.icon-purple .icon {
+  color: #9333ea;
+}
+
+.icon-orange .icon {
+  color: #ea580c;
+}
+
+.statsFooter {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.trend-up-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #10b981;
+  margin-right: 0.25rem;
+}
+.trend-down-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #ef4444;
+  margin-right: 0.25rem;
+}
+
+.trend-up-text {
+  font-size: 0.875rem;
+  color: #10b981;
+}
+
+.trend-down-text {
+  font-size: 0.875rem;
+  color: #ef4444;
+}
+
+.pending-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.low-stock-text {
+  font-size: 0.875rem;
+  color: #ef4444;
+}
+
+.all-covered-text {
+  font-size: 0.875rem;
+  color: #10b981;
+}

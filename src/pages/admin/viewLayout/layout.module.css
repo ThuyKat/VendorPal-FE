@@ -1,0 +1,35 @@
+.layout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin:0 auto;
+    flex: 1;              /* Takes all remaining space */
+    background-color: #ffffff;
+    overflow-y: auto;     /* Scrollable if content overflows */
+    padding: 20px;        /* Optional: internal spacing */
+}
+.notification-btn {
+    padding: 0.5rem;
+    color: #9ca3af;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.notification-btn:hover {
+    color: #4b5563;
+}
+.main-content{
+    flex:1;
+}
+.logout-btn{
+    padding: 0.5rem;
+    color: #9ca3af;
+    border: none;
+    background: none;
+    transition: color 0.2s;
+}
+.logout-btn:hover {
+  color: #4b5563;
+}

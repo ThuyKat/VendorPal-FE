@@ -1,0 +1,40 @@
+/* Container */
+.container {
+  height: 100vh;
+  background-color: #f3f4f6;
+  display: flex;
+  width:100%;
+}
+
+/* Left Panel - Products */
+.leftPanel {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* Right Panel - Cart */
+.rightPanel {
+  min-width: 22rem;
+  padding: 1rem;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .leftPanel {
+    padding: 0.75rem;
+  }
+  
+  .rightPanel {
+    padding: 0.75rem;
+    padding-top: 0;
+  }
+  
+}
+

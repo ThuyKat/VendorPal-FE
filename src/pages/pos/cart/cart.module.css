@@ -1,0 +1,166 @@
+.cartPanel {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cart Header */
+.cartHeader {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cartTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+/* Cart Content */
+.cartContent {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Empty Cart */
+.emptyCart {
+  text-align: center;
+  color: #6b7280;
+  margin-top: 2rem;
+}
+
+.emptyCartIcon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 0.5rem auto;
+  color: #d1d5db;
+}
+
+.emptyCartText {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.875rem;
+}
+
+.emptyCartSubtext {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+
+/* Cart Footer */
+.cartFooter {
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Totals */
+.totals {
+  margin-bottom: 1rem;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.totalRowFinal {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #111827;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.processButton {
+  width: 100%;
+  border: 1px solid #059669;
+  background: #059669;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  font-weight: 500;
+}
+
+.processButton:hover {
+  background-color: #047857;
+}
+
+.processButton:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.saveButton {
+  width: 100%;
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: white;
+  padding: 0.5rem;
+  font-weight: 500;
+
+}
+
+.saveButton:hover {
+  background-color: #1d4ed8;
+}
+.clearButton {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  background: #e5e7eb;
+  color: #374151;
+  padding: 0.5rem;
+  font-weight: 600;
+}
+
+.clearButton:hover {
+  background-color: #d1d5db;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  
+  .cartPanel {
+    height: auto;
+    min-height: 400px;
+  }
+  
+  
+}
+/* Scrollbar Styling */
+
+.cartContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+.cartContent::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+
+.cartContent::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.cartContent::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}

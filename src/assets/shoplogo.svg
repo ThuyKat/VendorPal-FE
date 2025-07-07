@@ -1,0 +1,65 @@
+<svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="50%" style="stop-color:#1e40af"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background subtle pattern -->
+  <circle cx="35" cy="40" r="45" fill="url(#primaryGradient)" opacity="0.03"/>
+  
+  <!-- Main logo: Network/Connection concept -->
+  <g transform="translate(15, 20)">
+    <!-- Central hub node -->
+    <circle cx="25" cy="20" r="8" fill="url(#primaryGradient)" filter="url(#glow)"/>
+    
+    <!-- Connected nodes -->
+    <circle cx="10" cy="8" r="5" fill="url(#accentGradient)"/>
+    <circle cx="40" cy="8" r="5" fill="url(#accentGradient)"/>
+    <circle cx="8" cy="32" r="5" fill="url(#accentGradient)"/>
+    <circle cx="42" cy="32" r="5" fill="url(#accentGradient)"/>
+    
+    <!-- Connection lines -->
+    <line x1="25" y1="20" x2="10" y2="8" stroke="url(#primaryGradient)" stroke-width="2.5" opacity="0.7" stroke-linecap="round"/>
+    <line x1="25" y1="20" x2="40" y2="8" stroke="url(#primaryGradient)" stroke-width="2.5" opacity="0.7" stroke-linecap="round"/>
+    <line x1="25" y1="20" x2="8" y2="32" stroke="url(#primaryGradient)" stroke-width="2.5" opacity="0.7" stroke-linecap="round"/>
+    <line x1="25" y1="20" x2="42" y2="32" stroke="url(#primaryGradient)" stroke-width="2.5" opacity="0.7" stroke-linecap="round"/>
+    
+    <!-- Subtle connecting lines between outer nodes -->
+    <line x1="10" y1="8" x2="40" y2="8" stroke="url(#accentGradient)" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+    <line x1="8" y1="32" x2="42" y2="32" stroke="url(#accentGradient)" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+    
+    <!-- Inner highlight -->
+    <circle cx="25" cy="20" r="4" fill="#ffffff" opacity="0.3"/>
+  </g>
+  
+  <!-- Company name -->
+  <text x="85" y="35" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" fill="#1f2937">
+    vendor<tspan fill="url(#primaryGradient)">Pal</tspan>
+  </text>
+  
+  <!-- Tagline dots (subtle branding) -->
+  <g transform="translate(85, 50)">
+    <circle cx="0" cy="0" r="1.5" fill="url(#primaryGradient)" opacity="0.6"/>
+    <circle cx="8" cy="0" r="1.5" fill="url(#accentGradient)" opacity="0.6"/>
+    <circle cx="16" cy="0" r="1.5" fill="url(#primaryGradient)" opacity="0.4"/>
+  </g>
+  
+  <!-- Floating accent elements -->
+  <circle cx="250" cy="15" r="2" fill="url(#accentGradient)" opacity="0.5"/>
+  <circle cx="260" cy="25" r="1.5" fill="url(#primaryGradient)" opacity="0.4"/>
+  <circle cx="255" cy="35" r="1" fill="url(#accentGradient)" opacity="0.6"/>
+</svg>

@@ -1,0 +1,67 @@
+/* Container */
+.container {
+  padding: 1.5rem;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 10rem;               
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Buttons */
+.filterButton,
+.exportButton {
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  color: #374151;
+}
+
+.filterButton:hover,
+.exportButton:hover {
+  background-color: #f9fafb;
+}
+
+.newOrderButton {
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  width:auto;
+}
+
+.newOrderButton:hover {
+  background-color: #1d4ed8;
+}
+
+/* Icons */
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+}

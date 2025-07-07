@@ -1,0 +1,26 @@
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.avatar {
+    width: 2rem;
+    height: 2rem;
+    background-color: #2563eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-text {
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.user-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+}

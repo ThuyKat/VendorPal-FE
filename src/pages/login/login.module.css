@@ -1,0 +1,183 @@
+.login-container{
+    width:100%;
+    max-width: 400px;
+    border-radius: 1rem;
+    border: 1px solid #f3f4f6;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    padding: 2rem;
+    
+}
+.logo{
+    margin:0 auto;
+    width:100%;
+    max-width:500px;
+    padding:0 1rem;
+    margin-bottom:0.5rem;
+}
+.header{
+    margin-bottom:1.5rem;
+}
+.header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: #6b7280;
+}
+
+
+.form-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.75rem;
+}
+
+.role-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+.role-btn {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 2px solid #e5e7eb;
+    background-color: #f9fafb;
+    color: #6b7280;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    
+}
+.role-btn span{
+    margin-right:0.5rem;
+}
+
+.role-btn:hover {
+    border-color: #d1d5db;
+}
+
+.role-btn.active {
+    border-color: #3b82f6;
+    background-color: #eff6ff;
+    color: #1d4ed8;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    margin-bottom:1rem;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.remember-forgot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top:1rem;
+}
+
+.remember-group {
+    
+    display: flex;
+    align-items: center;
+}
+
+.remember-checkbox {
+    width: 1rem;
+    height: 1rem;
+    color: #3b82f6;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+}
+
+.remember-checkbox:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.remember-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+.forgot-password {
+    font-size: 0.875rem;
+    color: #3b82f6;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.forgot-password:hover {
+    color: #1e40af;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.75rem 1rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    margin:1rem 0;
+    
+}
+
+.login-btn :hover {
+    background-color: #2563eb;
+}
+
+.login-btn :focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.login-btn :disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.error-message {
+    margin: 12px 0;
+    padding: 0;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+.error-text {
+    margin: 0;
+    padding: 12px 16px;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    color: #dc2626;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+}
