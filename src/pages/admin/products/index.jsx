@@ -34,7 +34,7 @@ const products = [
 
 export default function Products() {
 const {data} = useFetch('/tenant/products');
-
+console.log("Fetched Product Data:", data);
 const handleSearch = (searchTerm) => {
             console.log("Search Term:", searchTerm);
             // search functionality here
