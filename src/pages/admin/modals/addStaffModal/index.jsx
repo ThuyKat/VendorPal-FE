@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { IoClose, IoPerson, IoMail, IoCall, IoShield } from 'react-icons/io5';
 import styles from './addStaffModal.module.css';
-
+import Form from '../../../../components/form';
+import Button from '../../../../components/button';
 export default function AddStaffModal({onClose, onSubmit, userRole = 'owner' }) {
   const [formData, setFormData] = useState({
     employeeId: '',
@@ -183,273 +184,193 @@ export default function AddStaffModal({onClose, onSubmit, userRole = 'owner' }) 
             <IoPerson size={24} />
             Add New Staff Member
           </h2>
-          <button 
+          <Button
             className={styles.closeButton}
             onClick={onClose}
             type="button"
           >
             <IoClose size={20} />
-          </button>
+          </Button>
         </div>
 
         {/* Modal Body */}
         <div className={styles.modalBody}>
           {/* Personal Information Section */}
-          <div className={styles.formSection}>
-            <h3 className={styles.sectionHeader}>
-              <IoPerson size={20} />
-              Personal Information
-            </h3>
-            
-            <div className={styles.formGrid}>
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="employeeId">
-                  Employee ID *
-                </label>
-                <input
-                  className={styles.input}
-                  type="text"
-                  id="employeeId"
+          <Form>
+            <Form.FormSection>
+              <h3 className={styles.sectionHeader}>
+                <IoPerson size={20} />
+                Personal Information
+              </h3>
+              <Form.FormGrid>
+                <Form.FormField 
+                  label="Employee ID"
                   name="employeeId"
+                  type="text"
+                  placeholder="e.g., EMP001"
                   value={formData.employeeId}
                   onChange={handleInputChange}
-                  required
-                  placeholder="e.g., EMP001"
+                  required={true}
                 />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="startDate">
-                  Start Date *
-                </label>
-                <input
-                  className={styles.input}
-                  type="date"
-                  id="startDate"
+                <Form.FormField 
+                  label="Start Date"
                   name="startDate"
+                  type="date"
                   value={formData.startDate}
                   onChange={handleInputChange}
-                  required
+                  required={true}
                 />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="firstName">
-                  <IoPerson size={16} />
-                  First Name *
-                </label>
-                <input
-                  className={styles.input}
-                  type="text"
-                  id="firstName"
+                <Form.FormField 
+                  label={<><IoPerson size={16} /> First Name</>}
                   name="firstName"
+                  type="text"
+                  placeholder="Enter first name"
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  required
-                  placeholder="Enter first name"
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="lastName">
-                  Last Name *
-                </label>
-                <input
-                  className={styles.input}
-                  type="text"
-                  id="lastName"
+                  required={true}
+                />  
+                <Form.FormField 
+                  label="Last Name"
                   name="lastName"
+                  type="text"
+                  placeholder="Enter last name"
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  required
-                  placeholder="Enter last name"
+                  required={true}
                 />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="email">
-                  <IoMail size={16} />
-                  Email Address *
-                </label>
-                <input
-                  className={styles.input}
-                  type="email"
-                  id="email"
+                <Form.FormField 
+                  label={<><IoMail size={16} /> Email Address</>}
                   name="email"
+                  type="email"
+                  placeholder="Enter email address"   
                   value={formData.email}
                   onChange={handleInputChange}
-                  required
-                  placeholder="Enter email address"
+                  required={true}
                 />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="mobile">
-                  <IoCall size={16} />
-                  Phone Number *
-                </label>
-                <input
-                  className={styles.input}
-                  type="tel"
-                  id="mobile"
+                <Form.FormField 
+                  label={<><IoCall size={16} /> Phone Number</>}
                   name="mobile"
+                  type="tel"  
+                  placeholder="Enter phone number"
                   value={formData.mobile}
                   onChange={handleInputChange}
-                  required
-                  placeholder="Enter phone number"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Employment Details Section */}
-          <div className={styles.formSection}>
-            <h3 className={styles.sectionHeader}>
-              <IoShield size={20} />
-              Employment Details
-            </h3>
-            
-            <div className={styles.formGrid}>
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="employmentType">
-                  Employment Type *
-                </label>
-                <select
-                  className={styles.select}
-                  id="employmentType"
-                  name="employmentType"
-                  value={formData.employmentType}
-                  onChange={handleInputChange}
-                >
-                  <option value="full_time">Full-time</option>
-                  <option value="part_time">Part-time</option>
-                  <option value="contractor">Contractor</option>
-                  <option value="intern">Intern</option>
-                </select>
-              </div>
-
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="team">
-                  Team *
-                </label>
-                <select
-                  className={styles.select}
-                  id="team"
-                  name="team"
-                  value={formData.team}
-                  onChange={handleInputChange}
-                >
-                  <option value="kitchen">Kitchen</option>
-                  <option value="floor">Floor</option>
-                  <option value="sales">Sales</option>
-                  <option value="management">Management</option>
-                  <option value="barista">Barista</option>
-                </select>
-              </div>
-
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="role">
-                  Role *
-                </label>
-                <select
-                  className={styles.select}
-                  id="role"
-                  name="role"
-                  value={formData.role}
-                  onChange={handleInputChange}
-                >
-                  {userRole === 'owner' && (
-                    <>
-                      <option value="owner">Owner</option>
-                      <option value="admin">Admin</option>
-                      <option value="supervisor">Supervisor</option>
-                    </>
-                  )}
-                  {(userRole === 'owner' || userRole === 'admin') && (
-                    <>
-                      <option value="staff_level_2">Staff Level 2</option>
-                    </>
-                  )}
-                  <option value="staff_level_1">Staff Level 1</option>
-                </select>
-              </div>
-
-              <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="pinCode">
-                  PIN Code (Optional)
-                </label>
-                <input
-                  className={styles.input}
-                  type="password"
-                  id="pinCode"
-                  name="pinCode"
-                  value={formData.pinCode}
-                  onChange={handleInputChange}
-                  maxLength="4"
-                  placeholder="4-digit PIN for POS login"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Permissions Section */}
-          <div className={styles.permissionsSection}>
-            <h3 className={styles.permissionsTitle}>
-              <IoShield size={20} />
-              Role Permissions
-            </h3>
-            
-            <div className={styles.permissionsNote}>
-              <p className={styles.permissionsNoteText}>
-                <strong>Note:</strong> Permissions are automatically assigned based on the selected role. 
-                You can adjust them as needed for this specific user.
-              </p>
-            </div>
-            
-            <div className={styles.permissionsGrid}>
-              {Object.entries(permissionCategories).map(([category, permissions]) => (
-                <div key={category} className={styles.permissionCategory}>
-                  <h4 className={styles.categoryTitle}>{category}</h4>
-                  {permissions.map(permission => (
-                    <div key={permission.id} className={styles.permissionItem}>
-                      <input
-                        className={styles.checkbox}
-                        type="checkbox"
-                        id={permission.id}
-                        checked={formData.permissions.includes(permission.id)}
-                        onChange={() => handlePermissionChange(permission.id)}
-                      />
-                      <label 
-                        className={styles.permissionLabel} 
-                        htmlFor={permission.id}
-                        title={permission.description}
-                      >
-                        {permission.name}
-                      </label>
+                  required={true}
+                />  
+                  
+              </Form.FormGrid>
+              </Form.FormSection>
+              <Form.FormSection>
+                <h3 className={styles.sectionHeader}>
+                  <IoShield size={20} />
+                  Employment Details
+                </h3>
+                <Form.FormGrid>
+                  <Form.FormField 
+                    label="Employment Type"
+                    name="employmentType"
+                    type="select"
+                    options={[
+                      { value: 'full_time', label: 'Full-time' },
+                      { value: 'part_time', label: 'Part-time' },
+                      { value: 'contractor', label: 'Contractor' },
+                      { value: 'intern', label: 'Intern' }
+                    ]}
+                    value={formData.employmentType}
+                    onChange={handleInputChange}
+                    required={true}
+                  />
+                  <Form.FormField 
+                    label="Team"
+                    name="team"
+                    type="select"
+                    options={[
+                      { value: 'kitchen', label: 'Kitchen' },
+                      { value: 'floor', label: 'Floor' },
+                      { value: 'sales', label: 'Sales' },
+                      { value: 'management', label: 'Management' },
+                      { value: 'barista', label: 'Barista' }
+                    ]}
+                    value={formData.team}
+                    onChange={handleInputChange}
+                    required={true}
+                  />
+                  <Form.FormField 
+                    label="Role"
+                    name="role"
+                    type="select"
+                    options={[
+                      ...(userRole === 'owner' ? [{ value: 'owner', label: 'Owner' }] : []),
+                      ...(userRole === 'owner' || userRole === 'admin' ? [{ value: 'admin', label: 'Admin' }, { value: 'supervisor', label: 'Supervisor' }] : []),
+                      { value: 'staff_level_2', label: 'Staff Level 2' },
+                      { value: 'staff_level_1', label: 'Staff Level 1' }
+                    ]}
+                    value={formData.role}
+                    onChange={handleInputChange}
+                    required={true}
+                  />
+                  <Form.FormField 
+                    label="PIN Code (Optional)"
+                    name="pinCode"
+                    type="password"
+                    placeholder="4-digit PIN for POS login"
+                    value={formData.pinCode}
+                    onChange={handleInputChange}
+                    maxLength="4"
+                  />
+                </Form.FormGrid>
+              </Form.FormSection>
+              {/* Permissions Section */}
+              <Form.FormSection>
+                <h3 className={styles.permissionsTitle}>
+                  <IoShield size={20} />
+                  Role Permissions
+                </h3>
+                <div className={styles.permissionsNote}>
+                  <p className={styles.permissionsNoteText}>
+                    <strong>Note:</strong> Permissions are automatically assigned based on the selected role. 
+                    You can adjust them as needed for this specific user.
+                  </p>
+                </div>
+                <div className={styles.permissionsGrid}>
+                  {Object.entries(permissionCategories).map(([category, permissions]) => (
+                    <div key={category} className={styles.permissionCategory}>
+                      <h4 className={styles.categoryTitle}>{category}</h4>
+                      {permissions.map(permission => (
+                        <Form.FormField
+                          key={permission.id}
+                          label={permission.name}
+                          name={permission.id}
+                          type="checkbox"
+                          id={permission.id}
+                          checked={formData.permissions.includes(permission.id)}
+                          onChange={() => handlePermissionChange(permission.id)}
+                          className={styles.permissionCheckbox}
+                          title={permission.description}
+                        />
+                        
+                      ))}
                     </div>
                   ))}
                 </div>
-              ))}
-            </div>
-            
-            {Object.keys(permissionCategories).length === 0 && (
-              <div className={styles.noPermissionsMessage}>
-                <p className={styles.noPermissionsText}>No permissions available for the selected role.</p>
-              </div>
-            )}
-          </div>
-
+                {Object.keys(permissionCategories).length === 0 && (
+                  <div className={styles.noPermissionsMessage}>
+                    <p className={styles.noPermissionsText}>No permissions available for the selected role.</p>
+                  </div>
+                )}      
+              </Form.FormSection>
+          </Form>
+         
           {/* Action Buttons */}
           <div className={styles.buttonContainer}>
-            <button
+            <Button
               type="button"
               className={styles.cancelButton}
               onClick={onClose}
               disabled={isLoading}
             >
               Cancel
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               className={`${styles.submitButton} ${isLoading ? styles.loadingButton : ''}`}
               disabled={isLoading}
@@ -457,7 +378,7 @@ export default function AddStaffModal({onClose, onSubmit, userRole = 'owner' }) 
             >
               {isLoading && <div className={styles.loadingSpinner}></div>}
               {isLoading ? 'Adding Staff...' : 'Add Staff Member'}
-            </button>
+            </Button>
           </div>
         </div>
       
