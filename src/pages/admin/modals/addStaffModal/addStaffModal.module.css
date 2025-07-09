@@ -47,7 +47,7 @@
   padding: 1.5rem;
 }
 
-/* Form Sections */
+/* Form Sections
 .formSection {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
@@ -70,7 +70,7 @@
   gap: 0.5rem;
 }
 
-/* Form Grid */
+
 .formGrid {
   margin:1.5rem;
   display: grid;
@@ -121,7 +121,7 @@
 
 .input::placeholder {
   color: #9ca3af;
-}
+} */
 
 /* Permissions Section */
 .permissionsSection {
@@ -187,7 +187,7 @@
 .permissionItem:hover {
   background: white;
 }
-
+/* 
 .checkbox {
   width: 1rem;
   height: 1rem;
@@ -199,7 +199,7 @@
 .checkbox:checked {
   background-color: #3b82f6;
   border-color: #3b82f6;
-}
+} */
 
 .permissionLabel {
   font-size: 0.875rem;
@@ -233,7 +233,29 @@
   padding-top: 1.5rem;
   border-top: 1px solid #e5e7eb;
 }
+.submitButton {
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  min-width: 140px;
+}
 
+.submitButton:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
 .cancelButton {
   padding: 0.75rem 1.5rem;
   border: 1px solid #d1d5db;
@@ -253,35 +275,6 @@
 .cancelButton:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-.submitButton {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
-  min-width: 140px;
-  justify-content: center;
-}
-
-.submitButton:hover:not(:disabled) {
-  background: #2563eb;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-}
-
-.submitButton:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
 }
 
 .loadingButton {
