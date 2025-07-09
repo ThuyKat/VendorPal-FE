@@ -20,6 +20,7 @@ export default function AddStaffModal({onClose, onSubmit, userRole = 'owner' }) 
   const [isLoading, setIsLoading] = useState(false);
 
   // Role-based permission mapping from database
+  // hardcoded for demo 
   const rolePermissions = {
     owner: [
       'view_order', 'take_order', 'edit_order', 'request_refund', 
@@ -68,11 +69,13 @@ export default function AddStaffModal({onClose, onSubmit, userRole = 'owner' }) 
   };
 
   // Filter permissions based on selected role
-  const getPermissionCategoriesForRole = (role) => {
+  function getPermissionCategoriesForRole(role){
     const allowedPermissions = rolePermissions[role] || [];
+    //new filtered permissions sorted by categories
     const filteredCategories = {};
     
     Object.entries(allPermissionCategories).forEach(([category, permissions]) => {
+      // get permission objects that match allowed permissions
       const filteredPermissions = permissions.filter(perm => 
         allowedPermissions.includes(perm.id)
       );
@@ -106,6 +109,9 @@ export default function AddStaffModal({onClose, onSubmit, userRole = 'owner' }) 
     }
   };
 
+  //every check box change will check if the permission is valid for the selected role
+  //if not valid, it will not change the state
+  //if valid, it will toggle the permission in the permissions array
   const handlePermissionChange = (permissionId) => {
     const allowedPermissions = rolePermissions[formData.role] || [];
     
@@ -168,16 +174,9 @@ export default function AddStaffModal({onClose, onSubmit, userRole = 'owner' }) 
     }
   };
 
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
-
+  
   return (
-    <div className={styles.modalOverlay} onClick={handleOverlayClick}>
-      <div className={styles.modalContent}>
+    <>
         {/* Modal Header */}
         <div className={styles.modalHeader}>
           <h2 className={styles.modalTitle}>
@@ -461,7 +460,7 @@ export default function AddStaffModal({onClose, onSubmit, userRole = 'owner' }) 
             </button>
           </div>
         </div>
-      </div>
-    </div>
+      
+    </>
   );
 }

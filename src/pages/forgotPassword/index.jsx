@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { IoArrowBack, IoMail, IoCheckmarkCircle, IoAlert, IoSend } from 'react-icons/io5';
 import styles from './forgotPassword.module.css';
 import { useNavigate } from 'react-router-dom';
-
+import Button from '../../components/button';
 export default function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [state, setState] = useState('initial'); // 'initial', 'loading', 'success', 'error'
@@ -74,7 +74,6 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className={styles.container}>
       <div className={styles.card}>
         {/* Header */}
         <div className={styles.header}>
@@ -113,7 +112,7 @@ export default function ForgotPassword() {
 
         {/* Form */}
         {(state === 'initial' || state === 'loading' || state === 'error') && (
-          <div className={styles.formContainer}>
+          <form action={handleSubmit} className={styles.formContainer}>
             <div className={styles.formGroup}>
               <label className={styles.label}>
                 Email Address
@@ -124,57 +123,52 @@ export default function ForgotPassword() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 disabled={state === 'loading'}
-                onKeyPress={(e) => {
-                  if (e.key === 'Enter') {
-                    handleSubmit();
-                  }
-                }}
                 className={styles.input}
               />
             </div>
 
-            <button
-              type="button"
-              onClick={handleSubmit}
-              disabled={state === 'loading'}
-              className={styles.submitButton}
-            >
-              {state === 'loading' ? (
-                <>
-                  <div className={styles.loadingSpinner}></div>
-                  Sending...
-                </>
-              ) : (
-                <>
-                  <IoSend size={16} />
-                  Send Reset Link
-                </>
-              )}
-            </button>
-          </div>
+              <Button
+                type="submit"
+                disabled={state === 'loading'}
+                className={styles.submitButton}
+              >
+              
+                {state === 'loading' ? (
+                  <>
+                    <div className={styles.loadingSpinner}></div>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <IoSend size={16} />
+                    Send Reset Link
+                  </>
+                )}
+              </Button>
+            </form>
         )}
 
         {/* Success Actions */}
         {state === 'success' && (
           <div className={styles.successActions}>
-            <button
+            <Button
               onClick={resetForm}
               className={styles.secondaryButton}
             >
               Send Another Email
-            </button>
+            </Button>
           </div>
         )}
 
         {/* Back to Login */}
         <div className={styles.backToLogin}>
-          <button
+          <Button
             onClick={handleBackToLogin}
             className={styles.linkButton}
           >
             <IoArrowBack size={16} />
             Back to Login
-          </button>
+          </Button>
         </div>
 
         {/* Additional Help */}
@@ -189,6 +183,5 @@ export default function ForgotPassword() {
           </div>
         )}
       </div>
-    </div>
   );
 }
