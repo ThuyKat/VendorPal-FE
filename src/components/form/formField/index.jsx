@@ -1,7 +1,8 @@
 import styles from './formField.module.css';
 import clsx from 'clsx';
 export default function FormField({
-  label,
+  label, 
+  labelStyle,   
   name,
   type = 'text',
   placeholder = '',
@@ -17,11 +18,11 @@ export default function FormField({
         [styles.error]: !value && required,
     });
     const formGroupClass = clsx(styles.formGroup, className);
-
+    
     if (type === 'checkbox') {
         return (
             <div className={formGroupClass}>
-                <label className={styles.checkboxLabel}>
+                <label className={clsx(styles.checkboxLabel, labelStyle)}>
                     <input
                         type="checkbox"             
                         name={name}
@@ -29,6 +30,7 @@ export default function FormField({
                         onChange={onChange}
                         className={styles.checkboxInput}
                     />
+
                     {label}
                 </label>
             </div>
@@ -37,7 +39,7 @@ export default function FormField({
     if (type === 'select') {    
         return (
             <div className={formGroupClass}>
-                {label && <label htmlFor={name} className={styles.label}>{label}</label>}
+                {label && <label htmlFor={name} className={clsx(styles.label,labelStyle)}>{label}</label>}
                 <select
                     id={name}
                     name={name}
@@ -58,7 +60,7 @@ export default function FormField({
     }
   return (
     <div className={formGroupClass}>
-      {label && <label htmlFor={name} className={styles.label}>{label}</label>}
+      {label && <label htmlFor={name} className={clsx(styles.label,labelStyle)}>{label}</label>}
       <input
         id={name}
         name={name}

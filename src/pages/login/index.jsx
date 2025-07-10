@@ -10,6 +10,7 @@ import {handleSuccessLogin} from "../../utils/handleSuccessLogin.js";
 import { loginUser } from "../../api/loginUser.js";
 import { isAuthenticated } from "../../utils/auth.js";
 import { useEffect } from "react";
+import Form from "../../components/form/Form.jsx";
 export default function Login() {
     //STATE MANAGEMENT
     const [formData, setFormData] = useState({
@@ -97,27 +98,47 @@ export default function Login() {
                     </div>
                 </div>
                 {/* END OF DEMO LOGIN OPTIONS */}
-                <form className="login-form" action={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="username" className={styles['form-label']}>Username</label>
-                        <input type="email" id="username" name="username" className={styles['form-input']} value={formData.username} onChange={handleChange} required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="password" className={styles['form-label']}>Password</label>
-                        <input type="password" id="password" name="password" className={styles['form-input'] } value={formData.password} onChange={handleChange} required />
-                    </div>
+                <Form className={styles["login-form"]} onSubmit={handleSubmit}>
+                    <Form.FormField 
+                    className={styles["form-group"]}
+                    label="Username"
+                    name="username"
+                    id="username"
+                    value={formData.username}
+                    onChange={handleChange} 
+                    required={true}
+                    />
+                    <Form.FormField 
+                    className={styles["form-group"]}
+                    label="Password"
+                    name="password"
+                    id="password"
+                    value={formData.password}
+                    onChange={handleChange} 
+                    required={true}
+                    />
                     <div className={styles["remember-forgot"]}>
-                        <label htmlFor="remember-me" className={styles['remember-group']}>
-                            <input type="checkbox" id="remember-me" name="remember-me" className={styles['remember-checkbox']}/>
-                            <span className={styles["remember-text"]}>Remember me</span>
-                        </label>
-                        <a href="/forgot-password" className={styles['forgot-password']}>Forgot password?</a>
+                    <Form.FormField 
+                    className={styles["remember-group"]}
+                    label= "Remember me"
+                    labelStyle={styles['remember-text']}
+                    name="remember-me"
+                    id="remember-me"
+                    type="checkbox"
+                    checked={ formData['remember-me'] || false } 
+                    onChange={(e) => {
+                        // Handle remember me logic here if needed
+                        console.log("Remember me:", e.target.checked);
+                    }}
+                    />
+          
+                    <a href="/forgot-password" className={styles['forgot-password']}>Forgot password?</a>
                     </div>
                     <div className={styles['error-message']}>
                         {error && <p className={styles['error-text']}>{error.message}</p>}
                     </div>
                     <Button ref={loginBtn} type="submit" className={styles['login-btn']}>Sign in</Button>
-                </form>
+                </Form>
             </div>
         </div>
     </>
