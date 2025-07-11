@@ -50,8 +50,8 @@ export default function Settings() {
   };
 
   const handleSave = () => {
-    // Handle save logic here
     alert('Settings saved successfully!');
+    
   };
 
   const settingsSections = [

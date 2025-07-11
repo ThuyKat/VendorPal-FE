@@ -53,7 +53,7 @@ export default function FormField({
                     <option value="" disabled>{placeholder}</option>
                     {options.map((option, index) => (
                         <option key={index} value={option.value}>
-                            {option.label}
+                            {option.label || option} 
                         </option>
                     ))}
                 </select>
