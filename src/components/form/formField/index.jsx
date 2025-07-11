@@ -10,6 +10,7 @@ export default function FormField({
   checked = false,
   value,
   onChange,
+    onToggle,
   required = false,
   className = '',
 }) {
@@ -57,6 +58,17 @@ export default function FormField({
                 </select>
             </div>
         );
+    }
+    if(type === 'toggle') {
+        <div className={styles.toggleContainer}>
+            <Button
+                onClick={onToggle}
+                className={`${styles.toggle} ${value ? styles.toggleOn : styles.toggleOff}`}
+            >
+                <div className={`${styles.toggleSlider} ${value ? styles.sliderOn : styles.sliderOff}`} />
+            </Button>
+            <span className={styles.toggleStatus}>{value ? 'Enabled' : 'Disabled'}</span>
+        </div>
     }
   return (
     <div className={formGroupClass}>
