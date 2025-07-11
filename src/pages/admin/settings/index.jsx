@@ -43,7 +43,7 @@ export default function Settings() {
       ...prev,
       [key]: value
     }));
-  };
+  }};
 
   const handleToggle = (key) => {
     setSettings(prev => ({
@@ -116,13 +116,13 @@ export default function Settings() {
           return (
             <SettingsCard
               key={sectionIndex}
-              icon={<IconComponent className={styles.icon} />}
+              icon={<IconComponent/>}
               section={section}
               handleInputChange={handleInputChange}
               handleToggle={handleToggle}
             />
             
-              );
+          );
         })}
       </div>
       <div className={styles.footer}>
@@ -139,7 +139,7 @@ export default function Settings() {
       </div>
     </div>
   )
-}}
+}
     {/* <div key={sectionIndex} className={styles.settingsCard}>
                <div className={styles.cardHeader}>
                 <div className={`${styles.iconContainer} ${section.colorClass}`}>

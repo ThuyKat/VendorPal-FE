@@ -1,5 +1,6 @@
 import styles from './formField.module.css';
 import clsx from 'clsx';
+import Button from '../../button';
 export default function FormField({
   label, 
   labelStyle,   
@@ -60,6 +61,9 @@ export default function FormField({
         );
     }
     if(type === 'toggle') {
+        return(
+        <div>
+        <label className={clsx(styles.label,labelStyle)}>{label}</label>
         <div className={styles.toggleContainer}>
             <Button
                 onClick={onToggle}
@@ -69,6 +73,8 @@ export default function FormField({
             </Button>
             <span className={styles.toggleStatus}>{value ? 'Enabled' : 'Disabled'}</span>
         </div>
+        </div>
+        );
     }
   return (
     <div className={formGroupClass}>
